@@ -7,7 +7,7 @@
 
 UMVC_View::UMVC_View(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitializer)
 {
-	EmptyMediator = NewObject<UMVC_Meditor>();
+	EmptyMediator = NewObject<UMVC_Mediator>();
 }
 
 
@@ -15,7 +15,7 @@ void UMVC_View::RegisterObserver_Implementation(const FString& NotificationName,
 {
 	if (!ObserverMap.Contains(NotificationName))
 	{
-		ObserverMap.Add(NotificationName, FObserverArray());
+		ObserverMap.Add(NotificationName, FObserverArray2());
 	}
 	ObserverMap[NotificationName].Observers.Add(observer);
 }
@@ -40,16 +40,17 @@ void UMVC_View::RemoveObserver_Implementation(const FString& NotificationName, U
 
 void UMVC_View::NotifyObservers_Implementation(UMVC_Notification* noitifyCation)
 {
-	if (ObserverMap.Contains(noitifyCation->GetName()))
+	FString name = noitifyCation->GetName();
+	if (ObserverMap.Contains(name))
 	{
-		for (auto cur : ObserverMap[noitifyCation->GetName()].Observers)
+		for (auto cur : ObserverMap[name].Observers)
 		{
 			cur->NotifyObserver(noitifyCation);
 		}
 	}
 }
 
-void UMVC_View::RegisterMeditor_Implementation(UMVC_Meditor* mediator)
+void UMVC_View::RegisterMeditor_Implementation(UMVC_Mediator* mediator)
 {
 	if (!mediator || MediatorMap.Contains(mediator->GetMeditorName()))
 		return;
@@ -71,7 +72,7 @@ void UMVC_View::RegisterMeditor_Implementation(UMVC_Meditor* mediator)
 
 }
 
-UMVC_Meditor* UMVC_View::RetrieveMediator_Implementation(const FString& mediatorName) const
+UMVC_Mediator* UMVC_View::RetrieveMediator_Implementation(const FString& mediatorName) const
 {
 	return MediatorMap.Contains(mediatorName) ? MediatorMap[mediatorName] : EmptyMediator;
 }
@@ -80,7 +81,7 @@ bool UMVC_View::RemoveMediator_Implementation(const FString& mediatorName)
 {
 	if (MediatorMap.Contains(mediatorName))
 	{
-		UMVC_Meditor* cur = MediatorMap[mediatorName];
+		UMVC_Mediator* cur = MediatorMap[mediatorName];
 		MediatorMap.Remove(mediatorName);
 
 		cur->OnRemove();

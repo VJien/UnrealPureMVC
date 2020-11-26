@@ -18,7 +18,7 @@ class UNREALPUREMVC_API UMVC_Proxy : public UMVC_Notifier
 public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Proxy")
-		void SetProxyName(const FString& Name);
+		void SetInfo(const FString& Name);
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Proxy")
 		void OnRegister();
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Proxy")

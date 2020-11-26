@@ -18,12 +18,14 @@ class UNREALPUREMVC_API UMVC_Notifier : public UObject
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Notifier")
 		void SendNotification(const FString& NotificationName, UObject* body = nullptr) ;
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Notifier")
+	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Notifier")
 		void SetFacade(UMVC_Facade* facade);
-
-
+	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Notifier")
+		void SetWorldContext(UObject* worldContext);
 
 protected:
 	UPROPERTY()
 		UMVC_Facade* Facade;
+	UPROPERTY(BlueprintReadOnly)
+		UObject* WorldContext;
 };

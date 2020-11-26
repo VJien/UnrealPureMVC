@@ -11,7 +11,13 @@ void UMVC_Notifier::SendNotification_Implementation(const FString& NotificationN
 	}
 }
 
-void UMVC_Notifier::SetFacade_Implementation(UMVC_Facade* facade)
+void UMVC_Notifier::SetFacade(UMVC_Facade* facade)
 {
 	Facade = facade;
+
+}
+
+void UMVC_Notifier::SetWorldContext(UObject* worldContext)
+{
+	WorldContext = worldContext;
 }

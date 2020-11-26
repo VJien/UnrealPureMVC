@@ -7,18 +7,18 @@
 #include "Observer/MVC_Observer.h"
 #include "MVC_View.generated.h"
 
-class UMVC_Meditor;
+class UMVC_Mediator;
 
 /**
  * 
  */
 USTRUCT()
-struct FObserverArray
+struct FObserverArray2
 {
 	GENERATED_BODY()
 
 public:
-	FObserverArray()
+	FObserverArray2()
 		:Observers(TArray<UMVC_Observer*>())
 	{};
 
@@ -41,21 +41,21 @@ public:
 		void NotifyObservers(UMVC_Notification* noitifyCation);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
-		void RegisterMeditor(UMVC_Meditor* mediator);
+		void RegisterMeditor(UMVC_Mediator* mediator);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
-		UMVC_Meditor* RetrieveMediator(const FString& mediatorName)const;
+		UMVC_Mediator* RetrieveMediator(const FString& mediatorName)const;
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
 		bool RemoveMediator(const FString& mediatorName);
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
 		bool HasMediator(const FString& mediatorName) ;
 protected:
 	UPROPERTY()
-		TMap<FString, UMVC_Meditor*> MediatorMap;
+		TMap<FString, UMVC_Mediator*> MediatorMap;
 
 	UPROPERTY()
-		TMap<FString, FObserverArray> ObserverMap;
+		TMap<FString, FObserverArray2> ObserverMap;
 
 	UPROPERTY()
-		UMVC_Meditor* EmptyMediator;
+		UMVC_Mediator* EmptyMediator;
 };

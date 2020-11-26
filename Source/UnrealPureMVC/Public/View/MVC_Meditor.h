@@ -14,7 +14,7 @@ class UMVC_Proxy;
  * 
  */
 UCLASS(BlueprintType, Blueprintable)
-class UNREALPUREMVC_API UMVC_Meditor : public UMVC_Notifier
+class UNREALPUREMVC_API UMVC_Mediator : public UMVC_Notifier
 {
 	GENERATED_BODY()
 public:
@@ -41,6 +41,6 @@ public:
 protected:
 	FString MediatorName;
 
-	UPROPERTY(BlueprintReadOnly, Category = "UnrealPureMVC | Meditor")
+	UPROPERTY()
 		UObject* ViewInstance;
 };

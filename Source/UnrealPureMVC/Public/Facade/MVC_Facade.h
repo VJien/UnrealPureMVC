@@ -10,6 +10,7 @@ class UMVC_Controller;
 class UMVC_View;
 class UMVC_Model;
 class UMVC_Proxy;
+class UMVC_Mediator;
 
 /**
  * 
@@ -46,14 +47,39 @@ public:
 		UMVC_Proxy* RetrieveProxy(const FString& ProxyName) const;
 	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Facade")
 		bool RemoveProxy(const FString& ProxyName);
-	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Facade")
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "UnrealPureMVC | Facade")
 		bool HasProxy(const FString& ProxyName);
+
+	//Mediator
+	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Facade")
+		void RegisterMediator(UMVC_Mediator* Mediator) ;
+	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Facade")
+		UMVC_Mediator* RetrieveMediator(const FString& MediatorName)const;
+	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Facade")
+		bool RemoveMediator(const FString& MediatorName) ;
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "UnrealPureMVC | Facade")
+		bool HasMeiator(const FString& MediatorName) ;
+
+
+	//Command
+	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Facade")
+		void RegisterCommand(UMVC_Command* command) ;
+	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Facade")
+		UMVC_Command* RetrieveCommand(const FString& NotificationName)const;
+	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Facade")
+		bool RemoveCommand(const FString& NotificationName) ;
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "UnrealPureMVC | Facade")
+		bool HasCommand(const FString& NotificationName) ;
 
 
 
 	//Observer
 	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Facade")
 		void SendNotification(const FString& NotificationName, UObject* body = nullptr);
+
+	
+	UMVC_View* GetView()const;
+
 protected:
 	UPROPERTY()
 		UMVC_Controller* Controller;
@@ -61,5 +87,9 @@ protected:
 		UMVC_View* View;
 	UPROPERTY()
 		UMVC_Model* Model;
+	UPROPERTY()
+		UObject* WorldContext;
 
+
+	bool bIsInit;
 };

@@ -2,12 +2,12 @@
 
 
 #include "Model/MVC_Proxy.h"
-#include "../Define/UPMDefine.h"
+#include "Define/UPMDefine.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 
 
-void UMVC_Proxy::SetProxyName_Implementation(const FString& Name)
+void UMVC_Proxy::SetInfo_Implementation(const FString& Name)
 {
 	ProxyName = Name;
 }
