@@ -13,7 +13,8 @@ public class UnrealPureMVC : ModuleRules
 			new string[] {
 				// ... add public include paths required here ...
                 Path.Combine(ModuleDirectory,"Define"),
-                Path.Combine(ModuleDirectory,"Public/"),
+                Path.Combine(ModuleDirectory,"Patterns"),
+                Path.Combine("UnrealPureMVC/Public/Core"),
             }
 			);
 				

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
-#include "Facade/MVC_Facade.h"
+#include "Patterns/Facade/MVC_Facade.h"
 
 class UMVC_Facade;
 

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Observer/MVC_Notifier.h"
+#include "Patterns/Observer/MVC_Notifier.h"
 #include "MVC_Command.generated.h"
 
 class UMVC_Notification;

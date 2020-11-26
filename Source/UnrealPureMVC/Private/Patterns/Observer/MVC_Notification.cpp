@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Observer/MVC_Notification.h"
+#include "Patterns/Observer/MVC_Notification.h"
 
 void UMVC_Notification::SetInfo(const FString& name, UObject* body /*= nullptr*/)
 {

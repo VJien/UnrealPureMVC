@@ -1,11 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Controller/MVC_Controller.h"
-#include "Controller/MVC_Command.h"
-#include "View/MVC_View.h"
-#include "Observer/MVC_Observer.h"
-#include "Observer/MVC_Notification.h"
+#include "Core/MVC_Controller.h"
+#include "Patterns/Command/MVC_Command.h"
+#include "Core/MVC_View.h"
+#include "Patterns/Observer/MVC_Observer.h"
+#include "Patterns/Observer/MVC_Notification.h"
 
 UMVC_Controller::UMVC_Controller(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitializer)
 {

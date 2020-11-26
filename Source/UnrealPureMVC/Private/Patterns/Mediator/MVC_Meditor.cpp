@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "View/MVC_Meditor.h"
+#include "Patterns/Mediator/MVC_Meditor.h"
 #include "Define/UPMDefine.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include "Observer/MVC_Notifier.h"
+#include "Patterns/Observer/MVC_Notifier.h"
 
 void UMVC_Mediator::Init_Implementation(const FString& mediatorName, UObject* viewInstance)
 {

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Observer/MVC_Observer.h"
+#include "Patterns/Observer/MVC_Observer.h"
 #include "MVC_View.generated.h"
 
 class UMVC_Mediator;

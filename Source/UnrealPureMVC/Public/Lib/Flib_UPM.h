@@ -4,10 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "Facade/MVC_Facade.h"
-#include "Model/MVC_Proxy.h"
-#include "View/MVC_Meditor.h"
-#include "Controller/MVC_Command.h"
+#include "Patterns/Facade/MVC_Facade.h"
+#include "Patterns/Proxy/MVC_Proxy.h"
+#include "Patterns/Mediator/MVC_Meditor.h"
+#include "Patterns/Command/MVC_Command.h"
 #include "Blueprint/UserWidget.h"
 #include "Flib_UPM.generated.h"
 

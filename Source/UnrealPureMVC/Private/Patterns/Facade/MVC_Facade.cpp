@@ -1,16 +1,16 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Facade/MVC_Facade.h"
-#include "View/MVC_View.h"
-#include "Model/MVC_Model.h"
-#include "Controller/MVC_Controller.h"
+#include "Patterns/Facade/MVC_Facade.h"
+#include "Core/MVC_View.h"
+#include "Core/MVC_Model.h"
+#include "Core/MVC_Controller.h"
 #include "Define/UPMDefine.h"
-#include "Observer/MVC_Notification.h"
-#include "View/MVC_Meditor.h"
-#include "Controller/MVC_Command.h"
+#include "Patterns/Observer/MVC_Notification.h"
+#include "Patterns/Mediator/MVC_Meditor.h"
+#include "Patterns/Command/MVC_Command.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include "Model/MVC_Proxy.h"
+#include "Patterns/Proxy/MVC_Proxy.h"
 
 
 

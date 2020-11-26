@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "View/MVC_View.h"
-#include "View/MVC_Meditor.h"
-#include "Observer/MVC_Notification.h"
+#include "Core/MVC_View.h"
+#include "Patterns/Mediator/MVC_Meditor.h"
+#include "Patterns/Observer/MVC_Notification.h"
 
 UMVC_View::UMVC_View(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitializer)
 {

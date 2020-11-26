@@ -1,8 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Model/MVC_Model.h"
-#include "Model/MVC_Proxy.h"
+#include "Core/MVC_Model.h"
+#include "./Define/UPMDefine.h"
+#include "Patterns/Proxy/MVC_Proxy.h"
 
 
 
@@ -20,6 +21,7 @@ void UMVC_Model::RegisterProxy_Implementation(UMVC_Proxy* Proxy)
 		{
 			ProxyMap.Add(Proxy->GetProxyName(), Proxy);
 			UE_LOG(UPM, Log, TEXT("Register Proxy : %s"), *(Proxy->GetProxyName()));
+			Proxy->OnRegister();
 		}
 	}
 }

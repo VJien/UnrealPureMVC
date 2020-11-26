@@ -1,7 +1,7 @@
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
 #include "UnrealPureMVC.h"
-#include "Facade/MVC_Facade.h"
+#include "Patterns/Facade/MVC_Facade.h"
 #include "./Define/UPMDefine.h"
 
 #define LOCTEXT_NAMESPACE "FUnrealPureMVCModule"

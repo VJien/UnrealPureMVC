@@ -1,11 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Controller/MVC_Command.h"
+#include "Patterns/Command/MVC_Command.h"
 #include "Define/UPMDefine.h"
-#include "View/MVC_Meditor.h"
-#include "Facade/MVC_Facade.h"
-#include "Observer/MVC_Notification.h"
+#include "Patterns/Mediator/MVC_Meditor.h"
+#include "Patterns/Facade/MVC_Facade.h"
+#include "Patterns/Observer/MVC_Notification.h"
 
 void UMVC_Command::Execute_Implementation(UMVC_Notification* notification)
 {

@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Model/MVC_Proxy.h"
+#include "Patterns/Proxy/MVC_Proxy.h"
 #include "Define/UPMDefine.h"
 #include "Kismet/KismetSystemLibrary.h"
 
