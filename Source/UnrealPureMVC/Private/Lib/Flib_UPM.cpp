@@ -63,17 +63,18 @@ UUserWidget* UFlib_UPM::CreateWidgetObject(UObject* worldContext, TSubclassOf<UU
 	return nullptr;
 }
 
-FString UFlib_UPM::GetProxyNameByClass(TSubclassOf<UMVC_Proxy> proxyClass)
+FString UFlib_UPM::GetProxyClassName(TSubclassOf<UMVC_Proxy> proxyClass)
 {
-	return proxyClass->GetName();
+
+	return proxyClass ? proxyClass->GetName() : TEXT("");
 }
 
-FString UFlib_UPM::GetMediatorNameByClass(TSubclassOf<UMVC_Mediator> mediatorClass)
+FString UFlib_UPM::GetMediatorClassName(TSubclassOf<UMVC_Mediator> mediatorClass)
 {
-	return mediatorClass->GetName();
+	return mediatorClass ? mediatorClass->GetName(): TEXT("");
 }
 
-FString UFlib_UPM::GetCommandNameByClass(TSubclassOf<UMVC_Command> commandrClass)
+FString UFlib_UPM::GetCommandClassName(TSubclassOf<UMVC_Command> commandrClass)
 {
-	return commandrClass->GetName();
+	return commandrClass ? commandrClass->GetName() : TEXT("");
 }

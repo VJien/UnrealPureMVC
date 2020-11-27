@@ -33,9 +33,9 @@ public:
 
 
 	UFUNCTION(BlueprintCallable, BlueprintPure ,Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
-		static FString GetProxyNameByClass(TSubclassOf<UMVC_Proxy> proxyClass);
+		static FString GetProxyClassName(TSubclassOf<UMVC_Proxy> proxyClass);
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
-		static FString GetMediatorNameByClass(TSubclassOf<UMVC_Mediator> mediatorClass);
+		static FString GetMediatorClassName(TSubclassOf<UMVC_Mediator> mediatorClass);
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
-		static FString GetCommandNameByClass(TSubclassOf<UMVC_Command> commandrClass);
+		static FString GetCommandClassName(TSubclassOf<UMVC_Command> commandrClass);
 };
