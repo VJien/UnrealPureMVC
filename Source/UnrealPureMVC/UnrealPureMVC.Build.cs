@@ -12,16 +12,14 @@ public class UnrealPureMVC : ModuleRules
 		PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...
-                Path.Combine(ModuleDirectory,"Define"),
-                Path.Combine(ModuleDirectory,"Patterns"),
-                Path.Combine("UnrealPureMVC/Public/Core"),
+               
             }
 			);
 				
 		
 		PrivateIncludePaths.AddRange(
 			new string[] {
-                 Path.Combine(ModuleDirectory,"Private"),
+             
 				// ... add other private include paths required here ...
 			}
 			);
@@ -44,6 +42,7 @@ public class UnrealPureMVC : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+                "AssetRegistry"
                 
 				// ... add private dependencies that you statically link with here ...	
 			}

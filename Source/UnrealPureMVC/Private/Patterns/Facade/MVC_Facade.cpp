@@ -111,7 +111,7 @@ void UMVC_Facade::RegisterCommand(UMVC_Command* command)
 {
 	if (!command || !Controller)
 	{
-		UE_LOG(UPM, Log, TEXT("RegisterMediator Failed"));
+		UE_LOG(UPM, Log, TEXT("Register command Failed"));
 		return;
 	}
 	command->SetFacade(this);

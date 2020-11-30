@@ -16,13 +16,13 @@ class UNREALPUREMVC_API UMVC_Model : public UObject
 {
 	GENERATED_UCLASS_BODY()
 public:
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Model")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Model")
 		void RegisterProxy(UMVC_Proxy* Proxy);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Model")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Model")
 		UMVC_Proxy* RetrieveProxy(const FString& ProxyName)const;
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Model")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Model")
 		bool RemoveProxy(const FString& ProxyName);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Model")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Model")
 		bool HasProxy(const FString& ProxyName)const;
 
 

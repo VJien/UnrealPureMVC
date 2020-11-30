@@ -80,6 +80,9 @@ public:
 	
 	UMVC_View* GetView()const;
 
+
+	UPROPERTY(BlueprintReadOnly)
+		UObject* WorldContext;
 protected:
 	UPROPERTY()
 		UMVC_Controller* Controller;
@@ -87,8 +90,7 @@ protected:
 		UMVC_View* View;
 	UPROPERTY()
 		UMVC_Model* Model;
-	UPROPERTY()
-		UObject* WorldContext;
+	
 
 
 	bool bIsInit;

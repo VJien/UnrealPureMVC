@@ -12,12 +12,12 @@ UMVC_Controller::UMVC_Controller(const FObjectInitializer& ObjectInitializer) :S
 	EmptyCommand = NewObject<UMVC_Command>();
 }
 
-void UMVC_Controller::Init_Implementation(UMVC_View* view)
+void UMVC_Controller::Init(UMVC_View* view)
 {
 	View = view;
 }
 
-void UMVC_Controller::RegisterCommand_Implementation(const FString& notificationName, UMVC_Command* command)
+void UMVC_Controller::RegisterCommand(const FString& notificationName, UMVC_Command* command)
 {
 	if (CommandMap.Contains(notificationName))
 		return;
@@ -31,12 +31,12 @@ void UMVC_Controller::RegisterCommand_Implementation(const FString& notification
 
 }
 
-UMVC_Command* UMVC_Controller::RetrieveCommand_Implementation(const FString& notificationName)
+UMVC_Command* UMVC_Controller::RetrieveCommand(const FString& notificationName)
 {
 	return CommandMap.Contains(notificationName) ? CommandMap[notificationName] : EmptyCommand;
 }
 
-void UMVC_Controller::ExecuteCommand_Implementation(UMVC_Notification* notification)
+void UMVC_Controller::ExecuteCommand(UMVC_Notification* notification)
 {
 	if (CommandMap.Contains(notification->GetName()))
 	{
@@ -44,7 +44,7 @@ void UMVC_Controller::ExecuteCommand_Implementation(UMVC_Notification* notificat
 	}
 }
 
-bool UMVC_Controller::RemoveCommand_Implementation(const FString& noitificationName)
+bool UMVC_Controller::RemoveCommand(const FString& noitificationName)
 {
 	if (CommandMap.Contains(noitificationName))
 	{
@@ -55,7 +55,7 @@ bool UMVC_Controller::RemoveCommand_Implementation(const FString& noitificationN
 	return false;
 }
 
-bool UMVC_Controller::HasCommand_Implementation(const FString& notificationName) const
+bool UMVC_Controller::HasCommand(const FString& notificationName) const
 {
 	return CommandMap.Contains(notificationName);
 }

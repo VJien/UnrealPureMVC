@@ -8,6 +8,7 @@
 
 class UMVC_Command;
 class UMVC_View;
+class UMVC_Notification;
 
 /**
  * 
@@ -17,17 +18,17 @@ class UNREALPUREMVC_API UMVC_Controller : public UObject
 {
 	GENERATED_UCLASS_BODY()
 public:
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
 		void Init(UMVC_View* view);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
 		void RegisterCommand(const FString& notificationName, UMVC_Command* command);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
 		UMVC_Command* RetrieveCommand(const FString& notificationName);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
 		void ExecuteCommand(UMVC_Notification* notification);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
 		bool RemoveCommand(const FString& noitificationName);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | Controller")
 		bool HasCommand(const FString& notificationName)const;
 
 

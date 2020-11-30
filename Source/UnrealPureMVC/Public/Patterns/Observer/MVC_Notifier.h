@@ -22,6 +22,8 @@ public:
 		void SetFacade(UMVC_Facade* facade);
 	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Notifier")
 		void SetWorldContext(UObject* worldContext);
+	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC | Notifier")
+		UMVC_Facade* GetFacade()const {return Facade;};
 
 protected:
 	UPROPERTY()

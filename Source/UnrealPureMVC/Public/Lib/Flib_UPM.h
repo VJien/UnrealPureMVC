@@ -22,14 +22,19 @@ public:
 	//will initializer facade
 	UFUNCTION(BlueprintCallable ,Category = "UnrealPureMVC", meta=(WorldContext = "worldContext", CallableWithoutWorldContext))
 		static UMVC_Facade* CreateFacade(UObject* worldContext, TSubclassOf<UMVC_Facade> facadeClass);
+	//create proxy object and register to PureMVC
 	UFUNCTION(BlueprintCallable , Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
-		static UMVC_Proxy* CreateProxy(UObject* worldContext, TSubclassOf<UMVC_Proxy> proxyClass, const FString& specialName);
+		static UMVC_Proxy* CreateProxy(UMVC_Facade* facade, TSubclassOf<UMVC_Proxy> proxyClass, const FString& specialName);
+	//create Mediator object and register to PureMVC
 	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
-		static UMVC_Mediator* CreateMediator(UObject* worldContext, TSubclassOf<UMVC_Mediator> mediatorClass, UObject* Instance, const FString& specialName);
+		static UMVC_Mediator* CreateMediator(UMVC_Facade* facade, TSubclassOf<UMVC_Mediator> mediatorClass, UObject* Instance, const FString& specialName);
+	//create Command  object and register to PureMVC
 	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
-		static UMVC_Command* CreateCommand(UObject* worldContext, TSubclassOf<UMVC_Command> commandClass);
+		static UMVC_Command* CreateCommand(UMVC_Facade* facade, TSubclassOf<UMVC_Command> commandClass);
+	//create UserWidget object and Mediator object, then  register to PureMVC
 	UFUNCTION(BlueprintCallable, Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
-		static UUserWidget* CreateWidgetObject(UObject* worldContext, TSubclassOf<UUserWidget> umgClass);
+		static UUserWidget* CreateWidgetObject(UMVC_Facade* facade, TSubclassOf<UUserWidget> umgClass, TSubclassOf<UMVC_Mediator> mediatorClass, const FString& specialName);
+
 
 
 	UFUNCTION(BlueprintCallable, BlueprintPure ,Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
@@ -38,4 +43,8 @@ public:
 		static FString GetMediatorClassName(TSubclassOf<UMVC_Mediator> mediatorClass);
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
 		static FString GetCommandClassName(TSubclassOf<UMVC_Command> commandrClass);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "UnrealPureMVC", meta = (WorldContext = "worldContext", CallableWithoutWorldContext))
+		static TArray<FAssetData> FindAllClass(UObject* worldContext, FName Type);
+
 };

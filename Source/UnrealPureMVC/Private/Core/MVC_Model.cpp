@@ -13,7 +13,7 @@ UMVC_Model::UMVC_Model(const FObjectInitializer& ObjectInitializer) :Super(Objec
 }
 
 
-void UMVC_Model::RegisterProxy_Implementation(UMVC_Proxy* Proxy)
+void UMVC_Model::RegisterProxy(UMVC_Proxy* Proxy)
 {
 	if (Proxy )
 	{
@@ -26,12 +26,12 @@ void UMVC_Model::RegisterProxy_Implementation(UMVC_Proxy* Proxy)
 	}
 }
 
-UMVC_Proxy* UMVC_Model::RetrieveProxy_Implementation(const FString& ProxyName) const
+UMVC_Proxy* UMVC_Model::RetrieveProxy(const FString& ProxyName) const
 {
 	return ProxyMap.Contains(ProxyName) ? ProxyMap[ProxyName] : DefaultProxy;
 }
 
-bool UMVC_Model::RemoveProxy_Implementation(const FString& ProxyName)
+bool UMVC_Model::RemoveProxy(const FString& ProxyName)
 {
 	if (ProxyMap.Num()>0)
 	{
@@ -48,7 +48,7 @@ bool UMVC_Model::RemoveProxy_Implementation(const FString& ProxyName)
 	return false;
 }
 
-bool UMVC_Model::HasProxy_Implementation(const FString& ProxyName) const
+bool UMVC_Model::HasProxy(const FString& ProxyName) const
 {
 	return ProxyMap.Contains(ProxyName);
 }

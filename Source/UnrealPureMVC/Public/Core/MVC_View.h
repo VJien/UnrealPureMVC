@@ -33,21 +33,21 @@ class UNREALPUREMVC_API UMVC_View : public UObject
 	GENERATED_UCLASS_BODY()
 	
 public:
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
 		void RegisterObserver(const FString& NotificationName, UMVC_Observer* observer);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
 		void RemoveObserver(const FString& NotificationName, UObject* notifyObject);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
 		void NotifyObservers(UMVC_Notification* noitifyCation);
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
 		void RegisterMeditor(UMVC_Mediator* mediator);
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
 		UMVC_Mediator* RetrieveMediator(const FString& mediatorName)const;
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
 		bool RemoveMediator(const FString& mediatorName);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
+	//UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "UnrealPureMVC | View")
 		bool HasMediator(const FString& mediatorName) ;
 protected:
 	UPROPERTY()

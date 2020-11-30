@@ -11,7 +11,7 @@ UMVC_View::UMVC_View(const FObjectInitializer& ObjectInitializer) :Super(ObjectI
 }
 
 
-void UMVC_View::RegisterObserver_Implementation(const FString& NotificationName, UMVC_Observer* observer)
+void UMVC_View::RegisterObserver(const FString& NotificationName, UMVC_Observer* observer)
 {
 	if (!ObserverMap.Contains(NotificationName))
 	{
@@ -20,7 +20,7 @@ void UMVC_View::RegisterObserver_Implementation(const FString& NotificationName,
 	ObserverMap[NotificationName].Observers.Add(observer);
 }
 
-void UMVC_View::RemoveObserver_Implementation(const FString& NotificationName, UObject* notifyObject)
+void UMVC_View::RemoveObserver(const FString& NotificationName, UObject* notifyObject)
 {
 	if (ObserverMap.Contains(NotificationName))
 	{
@@ -38,7 +38,7 @@ void UMVC_View::RemoveObserver_Implementation(const FString& NotificationName, U
 	}
 }
 
-void UMVC_View::NotifyObservers_Implementation(UMVC_Notification* noitifyCation)
+void UMVC_View::NotifyObservers(UMVC_Notification* noitifyCation)
 {
 	FString name = noitifyCation->GetName();
 	if (ObserverMap.Contains(name))
@@ -50,7 +50,7 @@ void UMVC_View::NotifyObservers_Implementation(UMVC_Notification* noitifyCation)
 	}
 }
 
-void UMVC_View::RegisterMeditor_Implementation(UMVC_Mediator* mediator)
+void UMVC_View::RegisterMeditor(UMVC_Mediator* mediator)
 {
 	if (!mediator || MediatorMap.Contains(mediator->GetMeditorName()))
 		return;
@@ -72,12 +72,12 @@ void UMVC_View::RegisterMeditor_Implementation(UMVC_Mediator* mediator)
 
 }
 
-UMVC_Mediator* UMVC_View::RetrieveMediator_Implementation(const FString& mediatorName) const
+UMVC_Mediator* UMVC_View::RetrieveMediator(const FString& mediatorName) const
 {
 	return MediatorMap.Contains(mediatorName) ? MediatorMap[mediatorName] : EmptyMediator;
 }
 
-bool UMVC_View::RemoveMediator_Implementation(const FString& mediatorName)
+bool UMVC_View::RemoveMediator(const FString& mediatorName)
 {
 	if (MediatorMap.Contains(mediatorName))
 	{
@@ -90,7 +90,7 @@ bool UMVC_View::RemoveMediator_Implementation(const FString& mediatorName)
 	return false;
 }
 
-bool UMVC_View::HasMediator_Implementation(const FString& mediatorName)
+bool UMVC_View::HasMediator(const FString& mediatorName)
 {
 	return MediatorMap.Contains(mediatorName);
 }
